@@ -9,7 +9,7 @@ class IdeasController < ApplicationController
   end
 
   def show
-    @idea=Idea.find(params[:id])
+    @idea = Idea.find(params[:id])
 
   end
 end
