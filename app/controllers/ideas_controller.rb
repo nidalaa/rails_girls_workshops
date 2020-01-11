@@ -25,6 +25,8 @@ class IdeasController < ApplicationController
   end
 
   def show
+    @idea = Idea.find(params[:id])
+
   end
 
   private
