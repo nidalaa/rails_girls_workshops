@@ -11,24 +11,26 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :idea_name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :idea_description, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :idea_name %>
-  </div>
+      <div class="form-group">
+        <%= form.label :picture %>
+        <%= form.text_field :picture, id: :idea_picture, class: 'form-control' %>
+      </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :idea_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture, id: :idea_picture %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
   </div>
 <% end %>
 
