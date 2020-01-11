@@ -1,2 +1,6 @@
-<h1>Ideas#show</h1>
-<p>Find me in app/views/ideas/show.html.erb</p>
+<h1>Idea <%=@idea.id %> </h1>
+<p>
+Picture: <%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
+Name: <%=@idea.name %>
+Description: <%=@idea.description %>
+</p>
