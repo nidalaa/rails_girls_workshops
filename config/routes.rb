@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'ideas/create'
-  get 'ideas/new'
-  get 'ideas/index'
-  get 'ideas/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'ideas#index'
+  resources :ideas, only: %i[index new create show]
 end
