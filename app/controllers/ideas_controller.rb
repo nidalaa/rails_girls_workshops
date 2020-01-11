@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   def index
-    @ideas = Idea.all
+    @ideas = current_user.ideas
   end
 
   # GET /ideas/new
