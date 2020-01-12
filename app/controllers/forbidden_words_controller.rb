@@ -4,21 +4,20 @@ class ForbiddenWordsController < ApplicationController
   # GET /forbidden_words
   # GET /forbidden_words.json
   def index
+    authorize! :manage, ForbiddenWord
     @forbidden_words = ForbiddenWord.all
   end
 
   # GET /forbidden_words/new
   def new
+    authorize! :manage, ForbiddenWord
     @forbidden_word = ForbiddenWord.new
   end
-
-  # GET /forbidden_words/1
-  # GET /forbidden_words/1.json
-  def show; end
 
   # POST /forbidden_words
   # POST /forbidden_words.json
   def create
+    authorize! :manage, ForbiddenWord
     @forbidden_word = ForbiddenWord.new(forbidden_word_params)
     if @forbidden_word.save
       redirect_to forbidden_words_url, notice: 'Forbidden word was successfully added.'
@@ -28,11 +27,14 @@ class ForbiddenWordsController < ApplicationController
   end
 
   # GET /forbidden_words/1/edit
-  def edit; end
+  def edit
+    authorize! :manage, ForbiddenWord
+  end
 
   # PATCH/PUT /forbidden_words/1
   # PATCH/PUT /forbidden_words/1.json
   def update
+    authorize! :manage, ForbiddenWord
     if @forbidden_word.update(forbidden_word_params)
       redirect_to forbidden_words_url, notice: 'Forbidden word was successfully updated.'
     else
@@ -43,6 +45,7 @@ class ForbiddenWordsController < ApplicationController
   # DELETE /forbidden_words/1
   # DELETE /forbidden_words/1.json
   def destroy
+    authorize! :manage, ForbiddenWord
     @forbidden_word.destroy
     redirect_to forbidden_words_url, notice: 'Forbidden word was successfully destroyed.' 
   end

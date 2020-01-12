@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
+# AccessGranted is a multi-role and whitelist based authorization gem for Rails
+gem 'access-granted', '~> 1.1.0'
 # Adding Bootstrap
 gem 'bootstrap-sass'
 # Adding carrierwave for picture uploads
@@ -12,6 +14,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+# Very simple Roles library without any authorization enforcement supporting scope on resource object.
+gem 'rolify'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
