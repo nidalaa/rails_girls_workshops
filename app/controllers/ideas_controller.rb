@@ -27,7 +27,29 @@ class IdeasController < ApplicationController
 
   def show
     @idea = Idea.find(params[:id])
+  end
 
+  def edit
+    @idea = current_user.ideas.find(params[:id])
+  end
+
+  def update
+    @idea = current_user.ideas.find(params[:id])
+    @idea.update(
+      name:         params[:idea][:name], 
+      description:  params[:idea][:description],
+      picture:      params[:idea][:picture],
+    ) 
+
+    respond_to do |format|
+      if @idea.valid?
+        format.html { redirect_to @idea, notice: 'Idea was successfully update.' }
+        format.json { render :show, status: :created, location: @idea }
+      else
+        format.html { render :new }
+        format.json { render json: @idea.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
