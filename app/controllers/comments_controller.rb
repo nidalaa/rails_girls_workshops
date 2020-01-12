@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-    @comments = idea.comments
+    @comments = idea.comments.ordered_by_newest
   end
 
   def new
@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -35,5 +36,7 @@ class CommentsController < ApplicationController
   def idea
     @idea ||= Idea.find(params[:idea_id])
   end
+
+
 
 end
