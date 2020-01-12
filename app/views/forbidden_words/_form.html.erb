@@ -1,0 +1,24 @@
+<%= form_for(forbidden_word) do |form| %>
+  <% if forbidden_word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(forbidden_word.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+      <ul>
+        <% forbidden_word.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :word %>
+        <%= form.text_field :word, id: :forbidden_word_item, class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Save', class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
