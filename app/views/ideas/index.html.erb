@@ -1,2 +1,9 @@
-<h1>Ideas#index</h1>
+<h1>All ideas</h1>
+<!--
 <p>Find me in app/views/ideas/index.html.erb</p>
+-->
+<% @ideas.each do |idea| %>
+	<%= idea.name %>
+	<%= idea.description %>
+	<%= idea.picture %> 
+<% end %> 
