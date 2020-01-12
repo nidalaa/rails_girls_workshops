@@ -24,11 +24,11 @@
 
       <div class="form-group">
         <%= form.label :picture %>
-        <%= form.text_field :picture, id: :idea_picture, class: 'form-control' %>
+        <%= form.file_field :picture, id: :idea_picture, class: 'btn' %>
       </div>
 
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit 'Save', class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
