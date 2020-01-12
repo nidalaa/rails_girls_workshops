@@ -1,0 +1,2 @@
+module ForbiddenWordsHelper
+end
